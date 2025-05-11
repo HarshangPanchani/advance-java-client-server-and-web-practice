@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Movie Manager</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            
+            h1, h2 {
+                color: #333;
+            }
+            
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .btn {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 14px;
+                margin-right: 10px;
+            }
+            
+            .btn:hover {
+                background-color: #45a049;
+            }
+            
+            .btn-view {
+                background-color: #2196F3;
+            }
+            
+            .btn-view:hover {
+                background-color: #0b7dda;
+            }
+        </style>
+    </h:head>
+    
+    <h:body>
+        <div class="container">
+            <h1>Welcome to Movie Manager (JSF Version)</h1>
+            <p>This application allows you to manage your movie collection using Java Server Faces (JSF).</p>
+            
+            <h:messages styleClass="message message-error" />
+            
+            <div style="margin-top: 20px;">
+                <h:link outcome="addMovie" styleClass="btn" value="Add New Movie" />
+                <h:link outcome="viewMovies" styleClass="btn btn-view" value="View All Movies" style="margin-left: 10px;" />
+            </div>
+            
+            <hr />
+            
+            
+        </div>
+    </h:body>
+</html>

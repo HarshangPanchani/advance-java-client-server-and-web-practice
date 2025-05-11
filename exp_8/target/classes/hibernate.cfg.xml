@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/testdb</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property> <!-- Change to your MySQL password -->
+        
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        
+        <!-- Update the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+        
+        <!-- Names the annotated entity class -->
+        <mapping class="com.example.exp_8.hibernatedemo.entity.Student"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,5 @@
+com\movie\dao\MovieDAO.class
+com\movie\model\Movie.class
+com\movie\bean\MovieBean.class
+com\movie\moviecrudapp10\JakartaRestConfiguration.class
+com\movie\moviecrudapp10\resources\JakartaEE8Resource.class

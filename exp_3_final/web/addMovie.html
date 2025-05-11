@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .menu {
+            display: flex;
+            margin: 20px 0;
+        }
+        .menu a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .menu a:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-width: 500px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Movie</h1>
+    
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="addMovie.html">Add Movie</a>
+        <a href="viewMovies">View Movies</a>
+        <a href="modifyMovie.html">Modify Movie</a>
+        <a href="deleteMovie.html">Delete Movie</a>
+    </div>
+    
+    <form action="addMovie" method="post">
+        <label for="title">Movie Title:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required>
+        
+        <label for="releaseYear">Release Year:</label>
+        <input type="number" id="releaseYear" name="releaseYear" required>
+        
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+        
+        <input type="submit" value="Add Movie">
+    </form>
+</body>
+</html>

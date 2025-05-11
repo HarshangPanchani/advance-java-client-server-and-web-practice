@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/exp_3_final">
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/moviedb" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/moviedb" username="root"/>
+</Context>

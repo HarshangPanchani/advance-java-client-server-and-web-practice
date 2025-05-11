@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Edit Movie</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+            
+            h1, h2 {
+                color: #333;
+            }
+            
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            
+            .form-control {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            
+            .btn {
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                text-decoration: none;
+                font-size: 14px;
+                margin-right: 10px;
+            }
+            
+            .btn:hover {
+                background-color: #45a049;
+            }
+            
+            .btn-cancel {
+                background-color: #f44336;
+            }
+            
+            .btn-cancel:hover {
+                background-color: #d32f2f;
+            }
+            
+            .message {
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 4px;
+            }
+            
+            .message-error {
+                background-color: #f2dede;
+                border: 1px solid #ebccd1;
+                color: #a94442;
+            }
+            
+            .nav-link {
+                display: inline-block;
+                margin-right: 10px;
+                text-decoration: none;
+                color: #2196F3;
+            }
+            
+            .nav-link:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </h:head>
+    
+    <h:body>
+        <div class="container">
+            <h1>Edit Movie</h1>
+            
+            <!-- Messages -->
+            <h:messages styleClass="message message-error" />
+            
+            <!-- Edit Movie Form -->
+            <h:form>
+                <h:inputHidden value="#{movieBean.selectedMovie.id}" />
+                
+                <div class="form-group">
+                    <h:outputLabel for="title" value="Title:" />
+                    <h:inputText id="title" value="#{movieBean.selectedMovie.title}" required="true" 
+                                requiredMessage="Title is required" styleClass="form-control" />
+                    <h:message for="title" styleClass="message message-error" />
+                </div>
+                
+                <div class="form-group">
+                    <h:outputLabel for="director" value="Director:" />
+                    <h:inputText id="director" value="#{movieBean.selectedMovie.director}" required="true" 
+                                requiredMessage="Director is required" styleClass="form-control" />
+                    <h:message for="director" styleClass="message message-error" />
+                </div>
+                
+                <div class="form-group">
+                    <h:outputLabel for="year" value="Year:" />
+                    <h:inputText id="year" value="#{movieBean.selectedMovie.year}" required="true" 
+                                requiredMessage="Year is required" styleClass="form-control">
+                        <f:validateLongRange minimum="1900" maximum="2100" />
+                    </h:inputText>
+                    <h:message for="year" styleClass="message message-error" />
+                </div>
+                
+                <div class="form-group">
+                    <h:commandButton value="Update Movie" action="#{movieBean.updateMovie}" styleClass="btn" />
+                    <h:link outcome="viewMovies" value="Cancel" styleClass="btn btn-cancel" style="margin-left: 10px;" />
+                </div>
+            </h:form>
+            
+            <div style="margin-top: 20px;">
+                <h:link outcome="index" value="Back to Home" styleClass="nav-link" />
+                <h:link outcome="viewMovies" value="View All Movies" styleClass="nav-link" />
+            </div>
+        </div>
+    </h:body>
+</html>

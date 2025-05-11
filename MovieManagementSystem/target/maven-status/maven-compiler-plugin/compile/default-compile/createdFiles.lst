@@ -1,0 +1,8 @@
+com\movie\dao\MovieDAO.class
+com\movie\model\Movie.class
+com\movie\moviemanagementsystem\resources\JakartaEE8Resource.class
+com\movie\dao\MovieDAOImpl.class
+com\movie\service\MovieServiceImpl.class
+com\movie\service\MovieService.class
+com\movie\controller\MovieController.class
+com\movie\moviemanagementsystem\resources\JakartaRestConfiguration.class
